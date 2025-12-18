@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RestController
-@RequestMapping("/pop")
-public class PopController {
+@RequestMapping("/hourly")
+public class HourlyController {
     private PopServiceInterface popService;
 
     @Autowired
