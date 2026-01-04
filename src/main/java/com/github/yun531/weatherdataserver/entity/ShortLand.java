@@ -9,10 +9,9 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
-public class MidTemperature {
+public class ShortLand {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(columnDefinition = "DATETIME")
@@ -24,15 +23,16 @@ public class MidTemperature {
     @ManyToOne
     @JoinColumn(name = "city_region_code_id")
     private CityRegionCode regionCode;
+    private Integer pop;
+    private Integer temp;
+    private Integer rainType;
 
-    private Integer maxTemp;
-    private Integer minTemp;
-
-    public MidTemperature(LocalDateTime announceTime, LocalDateTime effectiveTime, CityRegionCode regionCode, Integer maxTemp, Integer minTemp) {
+    public ShortLand(LocalDateTime announceTime, LocalDateTime effectiveTime, CityRegionCode regionCode, Integer pop, Integer temp, Integer rainType) {
         this.announceTime = announceTime;
         this.effectiveTime = effectiveTime;
         this.regionCode = regionCode;
-        this.maxTemp = maxTemp;
-        this.minTemp = minTemp;
+        this.pop = pop;
+        this.temp = temp;
+        this.rainType = rainType;
     }
 }
