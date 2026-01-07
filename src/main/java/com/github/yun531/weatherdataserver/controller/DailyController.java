@@ -27,7 +27,7 @@ public class DailyController {
 
         LocalDateTime announceTime = nullableAnnounceTime == null ? getLatestAnnounceTime() : parseTimeStr(nullableAnnounceTime);
 
-        return dailyService.getDailyForecast(regionCode, announceTime);
+        return dailyService.getRecentDailyForecast(regionCode);
     }
 
 

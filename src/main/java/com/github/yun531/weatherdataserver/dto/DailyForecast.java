@@ -1,11 +1,11 @@
 package com.github.yun531.weatherdataserver.dto;
 
-import com.github.yun531.weatherdataserver.entity.MidTemperature;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
 public class DailyForecast {
-    String announceTime;
     String regionCode;
     List<DailyForecastItem> forecasts;
 }
