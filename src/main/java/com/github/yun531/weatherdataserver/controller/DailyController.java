@@ -22,11 +22,7 @@ public class DailyController {
     }
 
     @GetMapping("/forecast")
-    public DailyForecast getDailyForecast(@RequestParam String regionCode,
-                                          @RequestParam(name = "announceTime", required = false) String nullableAnnounceTime) {
-
-        LocalDateTime announceTime = nullableAnnounceTime == null ? getLatestAnnounceTime() : parseTimeStr(nullableAnnounceTime);
-
+    public DailyForecast getDailyForecast(@RequestParam String regionCode) {
         return dailyService.getRecentDailyForecast(regionCode);
     }
 
