@@ -11,5 +11,5 @@ public class HourlyForecastDto {
     private String announceTime;
     private Integer coordsX;
     private Integer coordsY;
-    private List<ShortPopDto> pops;
+    private List<ShortGridForecastData> gridForecastData;
 }
