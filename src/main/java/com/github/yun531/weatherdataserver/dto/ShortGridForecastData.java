@@ -10,20 +10,17 @@ import java.time.format.DateTimeFormatter;
 public class ShortGridForecastData {
     private String effectiveTime;
     private Integer pop;
-    private Integer maxTemp;
-    private Integer minTemp;
+    private Integer temp;
 
-    public ShortGridForecastData(LocalDateTime effectiveTime, Integer pop,  Integer maxTemp, Integer minTemp) {
+    public ShortGridForecastData(LocalDateTime effectiveTime, Integer pop,  Integer temp) {
         this.effectiveTime = effectiveTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
         this.pop = pop;
-        this.maxTemp = maxTemp;
-        this.minTemp = minTemp;
+        this.temp = temp;
     }
 
     public ShortGridForecastData(ShortGrid shortGrid) {
         this.effectiveTime = shortGrid.getEffectiveTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
         this.pop = shortGrid.getPop();
-        this.maxTemp = shortGrid.getMaxTemp();
-        this.minTemp = shortGrid.getMinTemp();
+        this.temp = shortGrid.getTemp();
     }
 }
